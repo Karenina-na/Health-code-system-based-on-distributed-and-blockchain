@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    #路由配置
+    gateway:
+      default-filters:
+        - AddRequestHeader=token, gateway
+
+      routes:
+        - id: identity-server
+          uri: lb://identity-server
+          predicates:
+            - Path=/identity/**
+
+        - id: user-server
+          uri: lb://UserServer
+          predicates:
+            - Path=/user/**
+
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:55550"
+              - "http://localhost:8889"
+            allowedMethods:
+              - "GET"
+              - "POST"
+              - "DELETE"
+              - "PUT"
+            allowedHeaders: "*"
+            allowCredentials: true
+            maxAge: 360000

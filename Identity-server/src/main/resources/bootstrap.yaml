@@ -1,0 +1,20 @@
+server:
+  port: 55550
+
+spring:
+  application:
+    name: identity-server
+
+  cloud:
+    nacos:
+      server-addr: 192.168.71.129:8848
+
+      config:
+        file-extension: yaml
+
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        ephemeral: false
+        cluster-name: default   #集群属性

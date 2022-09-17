@@ -1,0 +1,20 @@
+server:
+  port: 55555
+spring:
+  application:
+    name: gateway
+
+  cloud:
+    nacos:
+      server-addr: 192.168.71.129:8848
+
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        ephemeral: false
+        cluster-name: default   #集群属性
+
+    sentinel:
+      transport:
+        dashboard: 192.168.71.129:8858

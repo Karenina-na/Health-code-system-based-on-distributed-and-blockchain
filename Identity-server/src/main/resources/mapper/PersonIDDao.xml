@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ybxt.identityserver.dao.PersonIDDao">
+    <resultMap type="com.ybxt.identityserver.entity.PersonData" id="personDataMap">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="gender" column="gender"/>
+        <result column="identity_number" property="person_id"/>
+        <result column="phone_number" property="phone"/>
+    </resultMap>
+</mapper>
