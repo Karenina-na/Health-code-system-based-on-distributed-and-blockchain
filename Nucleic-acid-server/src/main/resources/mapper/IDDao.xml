@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ybxt.nucleicacidserver.dao.NucleicAcidDao">
+    <resultMap type="com.ybxt.nucleicacidserver.entity.NucleicAcidData" id="nucleicAcidData">
+        <id column="id" property="id"/>
+        <result column="person_id" property="person_id"/>
+        <result column="nucleic_acid_company" property="nucleic_acid_company"/>
+        <result column="nucleic_acid_sample_time" property="nucleic_acid_sample_time"/>
+        <result column="nucleic_acid_sample_place" property="nucleic_acid_sample_place"/>
+        <result column="nucleic_acid_test_result_time" property="nucleic_acid_test_result_time"/>
+        <result column="nucleic_acid_test_place" property="nucleic_acid_test_place"/>
+        <result column="nucleic_acid_test_result" property="nucleic_acid_test_result"/>
+    </resultMap>
+</mapper>

@@ -55,7 +55,7 @@ mybatis-plus:
 
 management:
   endpoint:
-    health:                   #开放健康指标
+    health: #开放健康指标
       show-details: always
     info:
       enabled: true
@@ -68,8 +68,8 @@ management:
     env:
       enabled: true
 
-info:   #自定义信息
+info: #自定义信息
   author: wzx
-  message: identity-server
+  message: nucleic-acid-server
   app-name: Health-code-system-based-on-distributed-and-blockchain
   version: snapshot-1

@@ -1,9 +1,9 @@
 server:
-  port: 55550
+  port: 44444
 
 spring:
   application:
-    name: identity-server
+    name: monitor-server
 
   cloud:
     nacos:
@@ -16,9 +16,4 @@ spring:
         username: nacos
         password: nacos
         namespace: 74a950e8-5478-41a2-a3f7-9dddc8b21972
-        cluster-name: default   #集群属性
-
-  boot:
-    admin:
-      client:
-        url: http://localhost:44444
+        cluster-name: default   #????

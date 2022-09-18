@@ -43,13 +43,13 @@ public class controller {
 
     /**
      * 身份证查询个人信息
-     * @param idcard    身份证
+     * @param identity    身份证
      * @return    个人信息
      */
-    @GetMapping("/identity/idcard/{idcard}")
-    public MessageResult getPersonDataByIdCard(@PathVariable String idcard) {
+    @GetMapping("/identity/identity/{identity}")
+    public MessageResult getPersonDataByIdCard(@PathVariable String identity) {
         MessageResult result=new MessageResult();
-        PersonData personData = personIDService.GetPersonData(idcard);
+        PersonData personData = personIDService.GetPersonData(identity);
         if (personData==null) {
             result.ErrorMessageResult("未查询到数据");
             return result;

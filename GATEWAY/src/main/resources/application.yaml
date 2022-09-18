@@ -3,7 +3,7 @@ spring:
     #路由配置
     gateway:
       default-filters:
-        - AddRequestHeader=token, gateway
+        - AddRequestHeader=origin, gateway
 
       routes:
         - id: identity-server
@@ -11,10 +11,20 @@ spring:
           predicates:
             - Path=/identity/**
 
-        - id: user-server
-          uri: lb://UserServer
+        - id: nucleic-acid-server
+          uri: lb://nucleic-acid-server
           predicates:
-            - Path=/user/**
+            - Path=/nucleicacid/**
+
+        - id: trace-server
+          uri: lb://trace-server
+          predicates:
+            - Path=/trace/**
+
+        - id: vaccines-server
+          uri: lb://vaccines-server
+          predicates:
+            - Path=/vaccines/**
 
       globalcors:
         add-to-simple-url-handler-mapping: true
@@ -22,7 +32,9 @@ spring:
           '[/**]':
             allowedOrigins:
               - "http://localhost:55550"
-              - "http://localhost:8889"
+              - "http://localhost:55551"
+              - "http://localhost:55552"
+              - "http://localhost:55553"
             allowedMethods:
               - "GET"
               - "POST"
@@ -31,3 +43,24 @@ spring:
             allowedHeaders: "*"
             allowCredentials: true
             maxAge: 360000
+
+management:
+  endpoint:
+    health: #开放健康指标
+      show-details: always
+    info:
+      enabled: true
+
+  endpoints:
+    web:
+      exposure:
+        include: "*"          #开启全部信息
+  info:
+    env:
+      enabled: true
+
+info: #自定义信息
+  author: wzx
+  message: gateway
+  app-name: Health-code-system-based-on-distributed-and-blockchain
+  version: snapshot-1
