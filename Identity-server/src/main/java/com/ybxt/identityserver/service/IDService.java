@@ -1,6 +1,7 @@
 package com.ybxt.identityserver.service;
 
 import com.ybxt.identityserver.entity.PersonData;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -14,6 +15,7 @@ public interface IDService {
      * @return    名字
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     String GetName(String id);
 
     /**
@@ -22,6 +24,7 @@ public interface IDService {
      * @return    性别
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     String GetGender(String id);
 
     /**
@@ -30,6 +33,7 @@ public interface IDService {
      * @return    身份证号
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     String GetPersonID(String id);
 
     /**
@@ -38,6 +42,7 @@ public interface IDService {
      * @return    电话号码
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     String GetPhone(String id);
 
     /**
@@ -46,5 +51,6 @@ public interface IDService {
      * @return  个人信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     PersonData GetPersonData(String person_id);
 }

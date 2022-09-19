@@ -2,6 +2,9 @@ package com.ybxt.traceserver.service.Impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alicp.jetcache.Cache;
+import com.alicp.jetcache.anno.CacheType;
+import com.alicp.jetcache.anno.CreateCache;
 import com.ybxt.traceserver.client.PersonDataClient;
 import com.ybxt.traceserver.dao.TraceDao;
 import com.ybxt.traceserver.entity.Code;
@@ -17,6 +20,13 @@ import java.util.List;
 @Service
 public class TraceServiceImpl implements TraceService{
 
+    @CreateCache(name = "GetTraceDataById", expire = 3600, cacheType = CacheType.REMOTE)
+    private Cache<Long,String> GetTraceDataById;
+    @CreateCache(name = "GetTraceDataByPersonID", expire = 3600, cacheType = CacheType.REMOTE)
+    private Cache<Long,String> GetTraceDataByPersonID;
+    @CreateCache(name = "GetTraceDataByIdentityID", expire = 3600, cacheType = CacheType.REMOTE)
+    private Cache<Long,String> GetTraceDataByIdentityID;
+
     @Resource
     private PersonDataClient personDataClient;
 
@@ -25,8 +35,15 @@ public class TraceServiceImpl implements TraceService{
 
     @Override
     public TraceData GetTraceDataById(String id) {
-        TraceData traceData = traceDao.queryTraceDataByID(id);
-        if (traceData == null) {
+        TraceData traceData;
+        String data=GetTraceDataById.get(Long.valueOf(id));
+        if (data == null) {
+            traceData=traceDao.queryTraceDataByID(id);
+            GetTraceDataById.put(Long.valueOf(id), JSON.toJSONString(traceData));
+        }else{
+            traceData=JSON.parseObject(data,TraceData.class);
+        }
+        if (traceData==null){
             return null;
         }
         int ID= traceData.getPerson_id();
@@ -42,8 +59,15 @@ public class TraceServiceImpl implements TraceService{
 
     @Override
     public List<TraceData> GetTraceDataByPersonID(String person_id) {
-        List<TraceData> traceDataList=traceDao.queryTraceDataByPersonID(person_id);
-        if (traceDataList == null) {
+        List<TraceData> traceDataList;
+        String data=GetTraceDataByPersonID.get(Long.valueOf(person_id));
+        if (data == null) {
+            traceDataList=traceDao.queryTraceDataByPersonID(person_id);
+            GetTraceDataByPersonID.put(Long.valueOf(person_id), JSON.toJSONString(traceDataList));
+        }else{
+            traceDataList=JSON.parseArray(data,TraceData.class);
+        }
+        if (traceDataList==null){
             return null;
         }
         MessageResult m=personDataClient.getPersonDataById(person_id);
@@ -64,9 +88,15 @@ public class TraceServiceImpl implements TraceService{
         if (String.valueOf(Code.OK).equals(m.getCode())) {
             String jsonObject = JSON.toJSONString( m.getData());
             PersonData personData = JSONObject.parseObject(jsonObject, PersonData.class);
-            List<TraceData> traceDataList = traceDao.queryTraceDataByPersonID(
-                    String.valueOf(personData.getId()));
-            if (traceDataList == null) {
+            List<TraceData> traceDataList;
+            String data=GetTraceDataByIdentityID.get(Long.valueOf(identity_id));
+            if (data == null) {
+                traceDataList=traceDao.queryTraceDataByPersonID(String.valueOf(personData.getId()));
+                GetTraceDataByIdentityID.put(Long.valueOf(identity_id), JSON.toJSONString(traceDataList));
+            }else{
+                traceDataList=JSON.parseArray(data,TraceData.class);
+            }
+            if (traceDataList==null){
                 return null;
             }
             for (TraceData traceData : traceDataList) {

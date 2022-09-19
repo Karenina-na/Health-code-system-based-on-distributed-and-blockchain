@@ -3,7 +3,7 @@ package com.ybxt.identityserver.controller;
 import com.ybxt.identityserver.entity.MessageResult;
 import com.ybxt.identityserver.entity.PersonData;
 import com.ybxt.identityserver.service.IDService;
-import com.ybxt.identityserver.service.PersonIDService;
+import com.ybxt.identityserver.service.IdentityService;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +22,7 @@ public class controller {
     private IDService idService;
 
     @Resource
-    private PersonIDService personIDService;
+    private IdentityService IdentityService;
 
     /**
      * ID查询个人信息
@@ -49,7 +49,7 @@ public class controller {
     @GetMapping("/identity/identity/{identity}")
     public MessageResult getPersonDataByIdCard(@PathVariable String identity) {
         MessageResult result=new MessageResult();
-        PersonData personData = personIDService.GetPersonData(identity);
+        PersonData personData = IdentityService.GetPersonData(identity);
         if (personData==null) {
             result.ErrorMessageResult("未查询到数据");
             return result;

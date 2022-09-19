@@ -1,7 +1,7 @@
 package com.ybxt.identityserver;
 
 import com.ybxt.identityserver.service.IDService;
-import com.ybxt.identityserver.service.PersonIDService;
+import com.ybxt.identityserver.service.IdentityService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,7 +14,7 @@ class IdentityServerApplicationTests {
     private IDService idService;
 
     @Resource
-    private PersonIDService personService;
+    private IdentityService personService;
 
     @Test
     void IDServiceTest(){

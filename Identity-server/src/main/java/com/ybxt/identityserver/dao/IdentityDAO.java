@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Select;
  * 身份证条件查询
  */
 @Mapper
-public interface PersonIDDao extends BaseMapper<PersonData> {
+public interface IdentityDAO extends BaseMapper<PersonData> {
 
     /**
      * 根据身份证查询用户名称

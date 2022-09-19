@@ -1,6 +1,7 @@
 package com.ybxt.nucleicacidserver.service;
 
 import com.ybxt.nucleicacidserver.entity.NucleicAcidData;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public interface NucleicAcidService {
      * @return    核酸信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     NucleicAcidData GetNucleicAcidDataById(String id);
 
     /**
@@ -24,6 +26,7 @@ public interface NucleicAcidService {
      * @return    核酸信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     List<NucleicAcidData> GetNucleicAcidDataByPersonID(String person_id);
 
     /**
@@ -32,5 +35,6 @@ public interface NucleicAcidService {
      * @return    核酸信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     List<NucleicAcidData> GetNucleicAcidDataByIdentityID(String identity_id);
 }

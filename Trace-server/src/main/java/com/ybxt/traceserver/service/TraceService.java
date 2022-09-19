@@ -1,6 +1,7 @@
 package com.ybxt.traceserver.service;
 
 import com.ybxt.traceserver.entity.TraceData;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public interface TraceService {
      * @return    轨迹信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     TraceData GetTraceDataById(String id);
 
     /**
@@ -24,6 +26,7 @@ public interface TraceService {
      * @return    轨迹信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     List<TraceData> GetTraceDataByPersonID(String person_id);
 
     /**
@@ -32,5 +35,6 @@ public interface TraceService {
      * @return    轨迹信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     List<TraceData> GetTraceDataByIdentityID(String identity_id);
 }

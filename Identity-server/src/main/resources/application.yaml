@@ -53,6 +53,22 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapper/*.xml
 
+jetcache:
+  statIntervalMinutes: 1
+  local:
+    default:
+      type: linkedhashmap
+      keyConvertor: fastjson
+      limit: 100
+
+  remote:
+    default:
+      type: redis
+      host: 192.168.71.129
+      port: 6379
+      poolConfig:
+        maxTotal: 50    #最大连接数
+
 management:
   endpoint:
     health:                   #开放健康指标

@@ -1,6 +1,7 @@
 package com.ybxt.vaccinesserver.service;
 
 import com.ybxt.vaccinesserver.entity.VaccinesData;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public interface VaccinesService {
      * @return    疫苗信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     VaccinesData GetVaccinesDataById(String id);
 
     /**
@@ -24,6 +26,7 @@ public interface VaccinesService {
      * @return    疫苗信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     List<VaccinesData> GetVaccinesDataByPersonID(String person_id);
 
     /**
@@ -32,5 +35,6 @@ public interface VaccinesService {
      * @return    疫苗信息
      */
     @Transactional(timeout = 5,rollbackFor = Exception.class)
+    @GlobalTransactional
     List<VaccinesData> GetVaccinesDataByIdentityID(String identity_id);
 }
