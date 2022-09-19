@@ -1,0 +1,24 @@
+server:
+  port: 55553
+
+spring:
+  application:
+    name: vaccines-server
+
+  cloud:
+    nacos:
+      server-addr: 192.168.71.129:8848
+
+      config:
+        file-extension: yaml
+
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: 74a950e8-5478-41a2-a3f7-9dddc8b21972
+        cluster-name: default
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:44444

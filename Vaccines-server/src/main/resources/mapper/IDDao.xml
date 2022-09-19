@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ybxt.vaccinesserver.dao.VaccinesDao">
+    <resultMap type="com.ybxt.vaccinesserver.entity.VaccinesData" id="vaccinesData">
+        <id column="id" property="id"/>
+        <result column="person_id" property="person_id"/>
+        <result column="vaccines_type" property="vaccines_type"/>
+        <result column="vaccines_company" property="vaccines_company"/>
+        <result column="vaccines_number" property="vaccines_number"/>
+        <result column="date" property="date"/>
+        <result column="place" property="place"/>
+    </resultMap>
+</mapper>
