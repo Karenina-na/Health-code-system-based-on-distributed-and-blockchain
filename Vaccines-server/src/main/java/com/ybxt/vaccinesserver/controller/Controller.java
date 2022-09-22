@@ -2,11 +2,10 @@ package com.ybxt.vaccinesserver.controller;
 
 import com.ybxt.vaccinesserver.entity.MessageResult;
 import com.ybxt.vaccinesserver.entity.VaccinesData;
+import com.ybxt.vaccinesserver.service.ChangeService;
 import com.ybxt.vaccinesserver.service.VaccinesService;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -20,6 +19,9 @@ public class Controller {
 
     @Resource
     private VaccinesService vaccinesService;
+
+    @Resource
+    private ChangeService changeService;
 
     /**
      * ID查询疫苗信息
@@ -69,6 +71,57 @@ public class Controller {
             return result;
         }
         result.SuccessMessageResult(VaccinesData);
+        return result;
+    }
+
+    /**
+     * 插入疫苗信息
+     * @param VaccinesData    疫苗信息
+     * @return  插入结果
+     */
+    @PostMapping("/vaccines")
+    public MessageResult insertVaccinesData( @RequestBody VaccinesData VaccinesData) {
+        MessageResult result=new MessageResult();
+        boolean insertResult = changeService.insertVaccinesData(VaccinesData);
+        if (insertResult) {
+            result.SuccessMessageResult("插入成功");
+            return result;
+        }
+        result.ErrorMessageResult("插入失败");
+        return result;
+    }
+
+    /**
+     * 根据疫苗信息id删除疫苗信息
+     * @param id    疫苗信息id
+     * @return  删除结果
+     */
+    @DeleteMapping("/vaccines/{id}")
+    public MessageResult deleteVaccinesData(@PathVariable String id) {
+        MessageResult result=new MessageResult();
+        boolean deleteResult = changeService.deleteVaccinesData(id);
+        if (deleteResult) {
+            result.SuccessMessageResult("删除成功");
+            return result;
+        }
+        result.ErrorMessageResult("删除失败");
+        return result;
+    }
+
+    /**
+     * 根据疫苗信息更新疫苗信息
+     * @param VaccinesData    疫苗信息
+     * @return  更新结果
+     */
+    @PutMapping("/vaccines")
+    public MessageResult updateVaccinesData( @RequestBody VaccinesData VaccinesData) {
+        MessageResult result=new MessageResult();
+        boolean updateResult = changeService.updateVaccinesData(VaccinesData);
+        if (updateResult) {
+            result.SuccessMessageResult("更新成功");
+            return result;
+        }
+        result.ErrorMessageResult("更新失败");
         return result;
     }
 }

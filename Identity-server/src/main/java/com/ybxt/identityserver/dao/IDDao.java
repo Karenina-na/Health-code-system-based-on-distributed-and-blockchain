@@ -35,7 +35,7 @@ public interface IDDao extends BaseMapper<PersonData> {
      * @return
      */
     @Select("SELECT person_data_tb.`identity_number` FROM person_data_tb WHERE id=#{ID}")
-    String selectPersonIDByID(@Param("ID") String ID);
+    String selectIdentityByID(@Param("ID") String ID);
 
     /**
      * 根据ID查询用户电话号

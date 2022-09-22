@@ -7,7 +7,7 @@
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="gender" column="gender"/>
-        <result column="identity_number" property="person_id"/>
+        <result column="identity_number" property="identity"/>
         <result column="phone_number" property="phone"/>
     </resultMap>
 </mapper>

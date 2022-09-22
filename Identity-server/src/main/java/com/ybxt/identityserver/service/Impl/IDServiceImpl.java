@@ -51,7 +51,7 @@ public class IDServiceImpl implements IDService {
     public String GetPersonID(String id) {
         String identity= GetPersonIdentityByIDCache.get(Long.valueOf(id));
         if(identity==null){
-            identity = idDao.selectPersonIDByID(id);
+            identity = idDao.selectIdentityByID(id);
             GetPersonIdentityByIDCache.put(Long.valueOf(id),identity);
         }
         return identity;

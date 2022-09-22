@@ -15,6 +15,6 @@ public class PersonData {
     private Integer id;
     private String name;
     private String gender;
-    private String person_id;
+    private String identity;
     private String phone;
 }

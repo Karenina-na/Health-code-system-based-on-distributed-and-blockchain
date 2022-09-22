@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ybxt.vaccinesserver.dao.ChangeDataDao">
+
+    <update id="updateVaccinesData" parameterType="com.ybxt.vaccinesserver.entity.VaccinesData">
+        update vaccines_data_tb
+        <set>
+            <if test="vaccines_type!=null and vaccines_type!=''">
+                vaccines_type=#{vaccines_type},
+            </if>
+            <if test="vaccines_company!=null and vaccines_company!=''">
+                vaccines_company=#{vaccines_company},
+            </if>
+            <if test="vaccines_number!=null and vaccines_number!=''">
+                vaccines_number=#{vaccines_number},
+            </if>
+            <if test="date!=null and date!=''">
+                date=#{date},
+            </if>
+            <if test="place!=null and place!=''">
+                place=#{place},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ybxt.nucleicacidserver.dao.ChangeDataDao">
+
+    <update id="updateNucleicAcidData" parameterType="com.ybxt.nucleicacidserver.entity.NucleicAcidData">
+        update nucleic_acid_data_tb
+        <set>
+            <if test="nucleic_acid_company!=null and nucleic_acid_company!=''">
+                nucleic_acid_company=#{nucleic_acid_company},
+            </if>
+            <if test="nucleic_acid_sample_time!=null and nucleic_acid_sample_time!=''">
+                nucleic_acid_sample_time=#{nucleic_acid_sample_time},
+            </if>
+            <if test="nucleic_acid_sample_place!=null and nucleic_acid_sample_place!=''">
+                nucleic_acid_sample_place=#{nucleic_acid_sample_place},
+            </if>
+            <if test="nucleic_acid_test_result_time!=null and nucleic_acid_test_result_time!=''">
+                nucleic_acid_test_result_time=#{nucleic_acid_test_result_time},
+            </if>
+            <if test="nucleic_acid_test_place!=null and nucleic_acid_test_place!=''">
+                nucleic_acid_test_place=#{nucleic_acid_test_place},
+            </if>
+            <if test="nucleic_acid_test_result!=null and nucleic_acid_test_result!=''">
+                nucleic_acid_test_result=#{nucleic_acid_test_result},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+</mapper>

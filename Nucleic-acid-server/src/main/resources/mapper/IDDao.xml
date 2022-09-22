@@ -13,4 +13,6 @@
         <result column="nucleic_acid_test_place" property="nucleic_acid_test_place"/>
         <result column="nucleic_acid_test_result" property="nucleic_acid_test_result"/>
     </resultMap>
+
+
 </mapper>
