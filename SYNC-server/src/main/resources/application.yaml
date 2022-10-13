@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: SYNC-server
+
+server:
+  port: 8080
+
+themis:
+  server:
+    name: A
+    ip: localhost
+    colony: A
+    namespace: A
+
+  address:
+    ip: localhost
+    port: 50000
+    protocol: http://
+    prefix: /api/v1
+
+  status-timeout: 5000
+  heartbeat-timeout: 5000

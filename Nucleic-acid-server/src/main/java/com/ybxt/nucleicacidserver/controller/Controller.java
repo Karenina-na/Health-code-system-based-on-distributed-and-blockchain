@@ -2,7 +2,6 @@ package com.ybxt.nucleicacidserver.controller;
 
 import com.ybxt.nucleicacidserver.entity.MessageResult;
 import com.ybxt.nucleicacidserver.entity.NucleicAcidData;
-import com.ybxt.nucleicacidserver.entity.PersonData;
 import com.ybxt.nucleicacidserver.service.ChangeService;
 import com.ybxt.nucleicacidserver.service.NucleicAcidService;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

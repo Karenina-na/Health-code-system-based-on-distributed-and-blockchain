@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GATEWAY/GATEWAY.iml" filepath="$PROJECT_DIR$/GATEWAY/GATEWAY.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Identity-server/Identity-server.iml" filepath="$PROJECT_DIR$/Identity-server/Identity-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Monitor/Monitor.iml" filepath="$PROJECT_DIR$/Monitor/Monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nucleic-acid-server/Nucleic-acid-server.iml" filepath="$PROJECT_DIR$/Nucleic-acid-server/Nucleic-acid-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SYNC-server/SYNC-server.iml" filepath="$PROJECT_DIR$/SYNC-server/SYNC-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Trace-server/Trace-server.iml" filepath="$PROJECT_DIR$/Trace-server/Trace-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vaccines-server/Vaccines-server.iml" filepath="$PROJECT_DIR$/Vaccines-server/Vaccines-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/云边协同分布式区块链一码通系统.iml" filepath="$PROJECT_DIR$/.idea/云边协同分布式区块链一码通系统.iml" />
+    </modules>
+  </component>
+</project>

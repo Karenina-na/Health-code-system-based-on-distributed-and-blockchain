@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="GATEWAY" />
+        <module name="Monitor" />
+        <module name="Identity-server" />
+        <module name="SYNC-server" />
+        <module name="Trace-server" />
+        <module name="Vaccines-server" />
+        <module name="Nucleic-acid-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="GATEWAY" target="1.8" />
+      <module name="Identity-server" target="1.8" />
+      <module name="Monitor" target="1.8" />
+      <module name="Nucleic-acid-server" target="1.8" />
+      <module name="SYNC-server" target="1.8" />
+      <module name="Trace-server" target="1.8" />
+      <module name="Vaccines-server" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SYNC-server" options="" />
+    </option>
+  </component>
+</project>
