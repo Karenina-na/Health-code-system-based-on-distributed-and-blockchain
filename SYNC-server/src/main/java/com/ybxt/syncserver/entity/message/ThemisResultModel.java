@@ -1,4 +1,4 @@
-package com.ybxt.syncserver.entity;
+package com.ybxt.syncserver.entity.message;
 
 import lombok.Data;
 

@@ -36,7 +36,7 @@ public class StatusBeginThread implements Runnable {
                     statusOperator.Candidate();
                     break;
                 case StatusEnum.LEADER:
-                    log.info("LEADER");
+                    statusOperator.Leader();
                     break;
                 case StatusEnum.CLOSE:
                     log.info("CLOSE");

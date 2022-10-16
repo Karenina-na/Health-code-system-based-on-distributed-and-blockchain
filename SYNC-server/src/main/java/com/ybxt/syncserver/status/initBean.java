@@ -1,8 +1,11 @@
 package com.ybxt.syncserver.status;
 
 import com.ybxt.syncserver.config.SyncConfig;
-import com.ybxt.syncserver.entity.BlockChainModel;
+import com.ybxt.syncserver.entity.block_chain.BlockChainModel;
+import com.ybxt.syncserver.entity.block_chain.BlockChainTempQueue;
+import com.ybxt.syncserver.entity.block_chain.BlockModel;
 import com.ybxt.syncserver.entity.ServerModel;
+import com.ybxt.syncserver.entity.message.ServerModelList;
 import com.ybxt.syncserver.status.core.StatusEnum;
 import com.ybxt.syncserver.status.core.status;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +13,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  * 初始化Bean
@@ -65,5 +71,40 @@ public class initBean {
         serverModel.setColony(syncConfig.getServerColony());
         serverModel.setNamespace(syncConfig.getServerNamespace());
         return serverModel;
+    }
+
+    /**
+     * themis-leader-udp消息队列
+     *
+     * @return {@link Queue}<{@link ServerModel}>
+     */
+    @Bean
+    public Queue<ServerModel> listenQueue(){
+        log.info("init listenQueue");
+        return new LinkedBlockingDeque<>();
+    }
+
+    /**
+     * 区块链临时队列
+     *
+     * @return {@link Queue}<{@link BlockModel}>
+     */
+    @Bean
+    public BlockChainTempQueue BlockChainTempQueue(){
+        log.info("init blockChainTempQueue");
+        BlockChainTempQueue blockChainTempQueue=new BlockChainTempQueue();
+        blockChainTempQueue.setBlockChainTempQueue(new LinkedBlockingDeque<>());
+        return blockChainTempQueue;
+    }
+
+    /**
+     * 服务器列表
+     *
+     * @return {@link List}<{@link ServerModel}>
+     */
+    @Bean
+    public ServerModelList serversModelList(){
+        log.info("init serverModelList");
+        return new ServerModelList();
     }
 }

@@ -1,6 +1,6 @@
 package com.ybxt.syncserver;
 
-import com.ybxt.syncserver.client.Client;
+import com.ybxt.syncserver.client.ThemisClient;
 import com.ybxt.syncserver.config.SyncConfig;
 import com.ybxt.syncserver.entity.ServerModel;
 import org.junit.jupiter.api.Test;
@@ -13,14 +13,14 @@ import java.util.List;
 class SyncServerApplicationTests {
 
     @Resource
-    Client client;
+    ThemisClient themisClient;
 
     @Resource
     SyncConfig config;
 
     @Test
     void ServerRegisterTest(){
-        boolean f=client.ServerRegister(new ServerModel(
+        boolean f= themisClient.ServerRegister(new ServerModel(
                 config.getServerIP(),
                 config.getPort(),
                 config.getServerName(),
@@ -33,7 +33,7 @@ class SyncServerApplicationTests {
 
     @Test
     void ServerHeartBeatTest(){
-        boolean f=client.ServerHeartBeat(new ServerModel(
+        boolean f= themisClient.ServerHeartBeat(new ServerModel(
                 config.getServerIP(),
                 config.getPort(),
                 config.getServerName(),
@@ -46,7 +46,7 @@ class SyncServerApplicationTests {
 
     @Test
     void GerLeaderTest(){
-        ServerModel s=client.GetLeaderServer(new ServerModel(
+        ServerModel s= themisClient.GetLeaderServer(new ServerModel(
                 config.getServerIP(),
                 config.getPort(),
                 config.getServerName(),
@@ -59,7 +59,7 @@ class SyncServerApplicationTests {
 
     @Test
     void GetServerListTest(){
-        List<ServerModel> s=client.GetServerList(new ServerModel(
+        List<ServerModel> s= themisClient.GetServerList(new ServerModel(
                 config.getServerIP(),
                 config.getPort(),
                 config.getServerName(),
@@ -72,7 +72,7 @@ class SyncServerApplicationTests {
 
     @Test
     void GetServerListNumTest(){
-        Integer s=client.GetServerCount(new ServerModel(
+        Integer s= themisClient.GetServerCount(new ServerModel(
                 config.getServerIP(),
                 config.getPort(),
                 config.getServerName(),
@@ -85,7 +85,7 @@ class SyncServerApplicationTests {
 
     @Test
     void ElectionTest(){
-        Boolean b=client.ElectLeaderServer(new ServerModel(
+        Boolean b= themisClient.ElectLeaderServer(new ServerModel(
                 config.getServerIP(),
                 config.getPort(),
                 config.getServerName(),

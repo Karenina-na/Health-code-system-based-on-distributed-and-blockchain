@@ -1,4 +1,4 @@
-package com.ybxt.syncserver.entity;
+package com.ybxt.syncserver.entity.block_chain;
 
 import com.ybxt.syncserver.util.encryption;
 import lombok.Data;

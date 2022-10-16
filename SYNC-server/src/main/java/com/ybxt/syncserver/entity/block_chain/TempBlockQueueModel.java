@@ -1,5 +1,6 @@
-package com.ybxt.syncserver.entity;
+package com.ybxt.syncserver.entity.block_chain;
 
+import com.ybxt.syncserver.entity.block_chain.BlockModel;
 import lombok.Data;
 
 import java.util.LinkedList;

@@ -1,10 +1,9 @@
-package com.ybxt.syncserver.entity;
+package com.ybxt.syncserver.entity.block_chain;
 
 import lombok.Data;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 

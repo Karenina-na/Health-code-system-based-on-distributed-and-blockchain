@@ -3,9 +3,9 @@ package com.ybxt.syncserver.client;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.ybxt.syncserver.config.SyncConfig;
-import com.ybxt.syncserver.entity.Code;
+import com.ybxt.syncserver.entity.message.Code;
 import com.ybxt.syncserver.entity.ServerModel;
-import com.ybxt.syncserver.entity.ThemisResultModel;
+import com.ybxt.syncserver.entity.message.ThemisResultModel;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -19,7 +19,7 @@ import java.util.List;
  * @date 2022/10/12
  */
 @Component
-public  class Client {
+public  class ThemisClient {
 
     @Resource
     private RestTemplate restTemplate;
@@ -95,12 +95,8 @@ public  class Client {
         if(result==null||!code.isSuccess(result.getCode())) {
             return null;
         }
-        String jsonObject = JSON.toJSONString( result.getData());
-        List<ServerModel> servers=JSONObject.parseArray(jsonObject, ServerModel.class);
-        if (servers!=null && servers.size()>0) {
-            return servers;
-        }
-        return null;
+        String jsonObject = JSON.toJSONString(result.getData());
+        return JSONObject.parseArray(jsonObject, ServerModel.class);
     }
 
     /**

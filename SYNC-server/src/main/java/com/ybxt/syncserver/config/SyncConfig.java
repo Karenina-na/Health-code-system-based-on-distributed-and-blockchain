@@ -29,6 +29,13 @@ public class SyncConfig {
      */
     @Value("${server.port}")
     private String Port;
+
+    /**
+     * udp端口号
+     */
+    @Value("${themis.server.udo-port}")
+    private Integer UDPPort;
+
     /**
      * 集群
      */
@@ -67,12 +74,30 @@ public class SyncConfig {
     /**
      * 状态超时
      */
-    @Value("${themis.status-timeout}")
-    private Integer StatusTimeout;
+    @Value("${themis.follow-status-timeout}")
+    private Integer FollowStatusTimeout;
 
     /**
-     * 心跳超时
+     * themis心跳超时
      */
     @Value("${themis.heartbeat-timeout}")
-    private Integer HeartBeatTimeout;
+    private Integer ThemisHeartBeatTimeout;
+
+    /**
+     * Leader发送心跳间隔
+     */
+    @Value("${themis.leader.heartbeat-timeout}")
+    private Integer LeaderHeartBeatTimeout;
+
+    /**
+     * Leader超时时间
+     */
+    @Value("${themis.leader.time-out}")
+    private Integer LeaderTimeOut;
+
+    /**
+     * Leader同步server列表
+     */
+    @Value("${themis.leader.server-List-time}")
+    private Integer LeaderSyncListTime;
 }
