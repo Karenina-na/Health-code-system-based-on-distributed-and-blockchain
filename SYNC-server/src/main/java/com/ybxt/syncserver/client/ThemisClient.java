@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -70,7 +71,7 @@ public  class ThemisClient {
         String url=baseURL+"/message/getLeader";
         ThemisResultModel result = restTemplate.postForObject(url,s,ThemisResultModel.class);
         if(result==null||!code.isSuccess(result.getCode())) {
-            return null;
+            return new ServerModel();
         }
         String jsonObject = JSON.toJSONString( result.getData());
         ServerModel server=JSONObject.parseObject(jsonObject, ServerModel.class);
@@ -93,7 +94,7 @@ public  class ThemisClient {
         String url=baseURL+"/message/getServers";
         ThemisResultModel result = restTemplate.postForObject(url,s,ThemisResultModel.class);
         if(result==null||!code.isSuccess(result.getCode())) {
-            return null;
+            return new ArrayList<>();
         }
         String jsonObject = JSON.toJSONString(result.getData());
         return JSONObject.parseArray(jsonObject, ServerModel.class);
@@ -111,7 +112,7 @@ public  class ThemisClient {
         String url=baseURL+"/message/getServersNum";
         ThemisResultModel result = restTemplate.postForObject(url,s,ThemisResultModel.class);
         if(result==null||!code.isSuccess(result.getCode())) {
-            return null;
+            return 0;
         }
         String jsonObject = JSON.toJSONString( result.getData());
         return JSONObject.parseObject(jsonObject, Integer.class);

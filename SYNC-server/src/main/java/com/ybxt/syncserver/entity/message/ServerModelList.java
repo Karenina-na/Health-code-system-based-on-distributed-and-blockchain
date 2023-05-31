@@ -14,5 +14,5 @@ import java.util.List;
  */
 @Data
 public class ServerModelList {
-    private List<ServerModel> serverModelList=new ArrayList<>();
+    private List<ServerModel> serverModelList;
 }

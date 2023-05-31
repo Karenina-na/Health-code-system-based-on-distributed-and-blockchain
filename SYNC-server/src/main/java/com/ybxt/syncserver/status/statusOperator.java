@@ -36,7 +36,7 @@ public class statusOperator {
     @Resource
     private FollowClient followClient;
     @Resource
-    private ServerModelList serversModelList;
+    private ServerModelList serverModelList;
 
     /**
      * FOLLOW
@@ -89,15 +89,15 @@ public class statusOperator {
      */
     public void Leader() throws InterruptedException {
         log.info("开始LEADER");
-        new Thread(new LeaderTimeOutThread(followClient, syncConfig, status,serversModelList)).start();
-        new Thread(new LeaderSyncThemisServerList(syncConfig, serversModelList, serverModel, themisClient, status)).start();
+        new Thread(new LeaderTimeOutThread(followClient, syncConfig, status, serverModelList)).start();
+        new Thread(new LeaderSyncThemisServerList(syncConfig, serverModelList, serverModel, themisClient, status)).start();
         while (true) {
             if (!status.getStatus().equals(StatusEnum.LEADER)){
                 return;
             }
             Thread.sleep(syncConfig.getLeaderHeartBeatTimeout());
-            synchronized (serversModelList) {
-                List<ServerModel> serverModels = serversModelList.getServerModelList();
+            synchronized (serverModelList) {
+                List<ServerModel> serverModels = serverModelList.getServerModelList();
                 serverModels.stream().iterator().forEachRemaining(model -> {
                     MessageResult messageResult = followClient.heartBeat(model, serverModel);
                     if (!messageResult.getCode().equals(new Code().getSuccess())) {

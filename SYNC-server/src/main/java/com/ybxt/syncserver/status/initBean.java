@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -67,6 +69,7 @@ public class initBean {
         ServerModel serverModel=new ServerModel();
         serverModel.setIP(syncConfig.getServerIP());
         serverModel.setPort(syncConfig.getPort());
+        serverModel.setUdp_port(syncConfig.getUDPPort());
         serverModel.setName(syncConfig.getServerName());
         serverModel.setColony(syncConfig.getServerColony());
         serverModel.setNamespace(syncConfig.getServerNamespace());
@@ -103,8 +106,10 @@ public class initBean {
      * @return {@link List}<{@link ServerModel}>
      */
     @Bean
-    public ServerModelList serversModelList(){
+    public ServerModelList serverModelList(){
         log.info("init serverModelList");
-        return new ServerModelList();
+        ServerModelList servers = new ServerModelList();
+        servers.setServerModelList(new LinkedList<>());
+        return servers ;
     }
 }

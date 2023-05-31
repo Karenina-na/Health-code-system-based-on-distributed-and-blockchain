@@ -39,7 +39,7 @@ public class UdpListenerThread implements Runnable {
     @SneakyThrows
     @Override
     public void run() {
-        DatagramSocket ds=new DatagramSocket(syncConfig.getUDPPort()); //接收端口号的消息
+        DatagramSocket ds=new DatagramSocket(Integer.parseInt(syncConfig.getUDPPort())); //接收端口号的消息
         while(true){
             byte[] bys=new byte[1024];
             DatagramPacket dp=new DatagramPacket(bys,bys.length);

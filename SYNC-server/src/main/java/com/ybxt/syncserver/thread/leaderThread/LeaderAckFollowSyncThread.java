@@ -19,18 +19,18 @@ public class LeaderAckFollowSyncThread implements Runnable {
 
     private final ServerModel serverModel;
     private final FollowClient followClient;
-    private final ServerModelList serversModelList;
+    private final ServerModelList serverModelList;
 
-    public LeaderAckFollowSyncThread(ServerModel serverModel, FollowClient followClient,ServerModelList serversModelList) {
+    public LeaderAckFollowSyncThread(ServerModel serverModel, FollowClient followClient,ServerModelList serverModelList) {
         this.serverModel = serverModel;
         this.followClient = followClient;
-        this.serversModelList = serversModelList;
+        this.serverModelList = serverModelList;
     }
 
     @Override
     public void run() {
-        synchronized (serversModelList){
-            List<ServerModel> serverModels = serversModelList.getServerModelList();
+        synchronized (serverModelList){
+            List<ServerModel> serverModels = serverModelList.getServerModelList();
             serverModels.stream().iterator().forEachRemaining(model -> {
                 MessageResult ack = followClient.ack(model, serverModel);
                 log.info("leader发送ack给follow服务器:{}", model.getName()+"-"+ack.getMessage());

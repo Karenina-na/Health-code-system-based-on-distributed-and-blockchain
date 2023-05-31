@@ -47,6 +47,8 @@ public class LeaderSyncThemisServerList implements Runnable {
             synchronized (serverModelList){
                 List<ServerModel> serverModels = themisClient.GetServerList(this.serverModel);
                 serverModelList.setServerModelList(serverModels);
+                Integer number = themisClient.GetServerCount(this.serverModel);
+                status.getLeader().setServerNum(number);
             }
             Thread.sleep(syncConfig.getLeaderSyncListTime());
         }

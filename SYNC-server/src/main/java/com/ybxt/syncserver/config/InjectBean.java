@@ -14,6 +14,7 @@ public class InjectBean {
     @LoadBalanced
     public RestTemplate restTemplate() {
         log.debug("init-restTemplate");
-        return new RestTemplate();
+        RestTemplate r=new RestTemplate();
+        return r;
     }
 }

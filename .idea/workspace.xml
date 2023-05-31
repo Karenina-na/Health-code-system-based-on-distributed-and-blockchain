@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="520dc6f3-45b2-4196-a96e-ffb4dc75a207" name="变更" comment="完成Sync-data框架，测试阶段，需解决List&lt;ServerModel&gt;无法全局生效问题">
+      <change afterPath="$PROJECT_DIR$/Database/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/.idea/Database.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/test.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/client/ThemisClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/client/ThemisClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/config/InjectBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/config/InjectBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/config/SyncConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/config/SyncConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/controller/LeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/controller/LeaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/entity/ServerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/entity/ServerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/entity/message/ServerModelList.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/entity/message/ServerModelList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/status/initBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/status/initBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/status/statusOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/status/statusOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/thread/leaderThread/LeaderAckFollowSyncThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/thread/leaderThread/LeaderAckFollowSyncThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/thread/leaderThread/LeaderSyncThemisServerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/thread/leaderThread/LeaderSyncThemisServerList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/thread/leaderThread/LeaderTimeOutThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/thread/leaderThread/LeaderTimeOutThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/thread/themisThread/UdpListenerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/java/com/ybxt/syncserver/thread/themisThread/UdpListenerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/SYNC-server/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYNC-server/src/test/java/com/ybxt/syncserver/SyncServerApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../Environment/Maven/apache-maven-3.6.3" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\Environment\Maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="jdkForImporter" value="17" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="11" />
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="2EtBabPNYVy3e4SgVlCBB6j9gbd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/java/myblog-spring-boot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;问题&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.tabnine.userSettings.AppSettingsConfigurable&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d68da1a4b463ef03ab5b21e0939b640c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\java\云边协同分布式区块链一码通系统\SYNC-server\src\main\java\com\ybxt\syncserver" />
+      <recent name="D:\code\java\云边协同分布式区块链一码通系统" />
+      <recent name="D:\code\java\云边协同分布式区块链一码通系统\Identity-server\src\main\resources" />
+      <recent name="D:\code\java\云边协同分布式区块链一码通系统\Vaccines-server\src\main\resources\mapper" />
+      <recent name="D:\code\java\云边协同分布式区块链一码通系统\Trace-server\src\main\resources\mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ybxt.syncserver.entity" />
+      <recent name="com.ybxt.vaccinesserver.service.Impl" />
+      <recent name="com.ybxt.vaccinesserver.service" />
+      <recent name="com.ybxt.vaccinesserver.dao" />
+      <recent name="com.ybxt.traceserver.service.Impl" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SyncServerApplication">
+    <configuration name="SyncServerApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SYNC-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ybxt.syncserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ybxt.syncserver" />
+      <option name="MAIN_CLASS_NAME" value="com.ybxt.syncserver.SyncServerApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SyncServerApplicationTests.ElectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SYNC-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ybxt.syncserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ybxt.syncserver" />
+      <option name="MAIN_CLASS_NAME" value="com.ybxt.syncserver.SyncServerApplicationTests" />
+      <option name="METHOD_NAME" value="ElectionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SyncServerApplicationTests.GerLeaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SYNC-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ybxt.syncserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ybxt.syncserver" />
+      <option name="MAIN_CLASS_NAME" value="com.ybxt.syncserver.SyncServerApplicationTests" />
+      <option name="METHOD_NAME" value="GerLeaderTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SyncServerApplicationTests.GetServerListNumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SYNC-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ybxt.syncserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ybxt.syncserver" />
+      <option name="MAIN_CLASS_NAME" value="com.ybxt.syncserver.SyncServerApplicationTests" />
+      <option name="METHOD_NAME" value="GetServerListNumTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SyncServerApplicationTests.GetServerListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SYNC-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ybxt.syncserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ybxt.syncserver" />
+      <option name="MAIN_CLASS_NAME" value="com.ybxt.syncserver.SyncServerApplicationTests" />
+      <option name="METHOD_NAME" value="GetServerListTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SyncServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="SYNC-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ybxt.syncserver.SyncServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.SyncServerApplicationTests" />
+      <item itemvalue="JUnit.SyncServerApplicationTests.ElectionTest" />
+      <item itemvalue="JUnit.SyncServerApplicationTests.GerLeaderTest" />
+      <item itemvalue="JUnit.SyncServerApplicationTests.GetServerListNumTest" />
+      <item itemvalue="JUnit.SyncServerApplicationTests.GetServerListTest" />
+      <item itemvalue="Spring Boot.SyncServerApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SyncServerApplicationTests.GetServerListTest" />
+        <item itemvalue="JUnit.SyncServerApplicationTests.GetServerListNumTest" />
+        <item itemvalue="JUnit.SyncServerApplicationTests.GerLeaderTest" />
+        <item itemvalue="JUnit.SyncServerApplicationTests.ElectionTest" />
+        <item itemvalue="JUnit.SyncServerApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="520dc6f3-45b2-4196-a96e-ffb4dc75a207" name="变更" comment="" />
+      <created>1663405064625</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663405064625</updated>
+      <workItem from="1663405066079" duration="3735000" />
+      <workItem from="1663408843654" duration="394000" />
+      <workItem from="1663409239601" duration="424000" />
+      <workItem from="1663409668323" duration="74000" />
+      <workItem from="1663409744214" duration="137000" />
+      <workItem from="1663414199737" duration="4148000" />
+      <workItem from="1663420023208" duration="1857000" />
+      <workItem from="1663466271203" duration="8580000" />
+      <workItem from="1663479444354" duration="16656000" />
+      <workItem from="1663500546525" duration="5642000" />
+      <workItem from="1663548525606" duration="6665000" />
+      <workItem from="1663604231328" duration="1908000" />
+      <workItem from="1663606158429" duration="79000" />
+      <workItem from="1663638351151" duration="7483000" />
+      <workItem from="1663685888126" duration="2997000" />
+      <workItem from="1663814038250" duration="4332000" />
+      <workItem from="1663846622849" duration="3303000" />
+      <workItem from="1663849935966" duration="19000" />
+      <workItem from="1663849957263" duration="2000" />
+      <workItem from="1663849993771" duration="648000" />
+      <workItem from="1663851860986" duration="437000" />
+      <workItem from="1663860441644" duration="929000" />
+      <workItem from="1663862568575" duration="614000" />
+      <workItem from="1663895991982" duration="41000" />
+      <workItem from="1663896219269" duration="281000" />
+      <workItem from="1663914675656" duration="5000" />
+      <workItem from="1663917765056" duration="2535000" />
+      <workItem from="1664207325518" duration="439000" />
+      <workItem from="1664207798315" duration="141000" />
+      <workItem from="1665537727511" duration="140000" />
+      <workItem from="1665537878299" duration="28000" />
+      <workItem from="1665537942301" duration="23000" />
+      <workItem from="1665537979498" duration="3220000" />
+      <workItem from="1665543710186" duration="71000" />
+      <workItem from="1665543793615" duration="10488000" />
+      <workItem from="1665573968200" duration="160000" />
+      <workItem from="1665574561389" duration="8741000" />
+      <workItem from="1665644638669" duration="9525000" />
+      <workItem from="1665660143430" duration="2386000" />
+      <workItem from="1665717125005" duration="10526000" />
+      <workItem from="1665749996751" duration="1864000" />
+      <workItem from="1665806860339" duration="128000" />
+      <workItem from="1665813754023" duration="3617000" />
+      <workItem from="1665817393768" duration="13414000" />
+      <workItem from="1665839421383" duration="3983000" />
+      <workItem from="1665884183071" duration="3783000" />
+      <workItem from="1665892976902" duration="3563000" />
+      <workItem from="1665901491706" duration="8585000" />
+      <workItem from="1665921498324" duration="1112000" />
+      <workItem from="1665922626797" duration="1495000" />
+      <workItem from="1666012338193" duration="4000" />
+      <workItem from="1666060485114" duration="119000" />
+      <workItem from="1666060615384" duration="342000" />
+      <workItem from="1666061905225" duration="696000" />
+      <workItem from="1666151688413" duration="43000" />
+      <workItem from="1666151784036" duration="25000" />
+      <workItem from="1666609564318" duration="159000" />
+      <workItem from="1666609734774" duration="4477000" />
+      <workItem from="1666682120787" duration="254000" />
+      <workItem from="1666687326669" duration="5000" />
+      <workItem from="1667821834099" duration="61000" />
+      <workItem from="1667821924927" duration="86000" />
+      <workItem from="1667822289306" duration="5000" />
+      <workItem from="1667824580344" duration="29000" />
+      <workItem from="1667824620366" duration="37000" />
+      <workItem from="1668862542387" duration="10000" />
+      <workItem from="1669806938056" duration="7000" />
+    </task>
+    <task id="LOCAL-00001" summary="网关搭建和个人信息服务搭建完成，集成seata、nacos、sentinel、mysql中间件">
+      <created>1663409346719</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663409346719</updated>
+    </task>
+    <task id="LOCAL-00002" summary="网关搭建和个人信息服务搭建完成，集成seata、nacos、sentinel、mysql中间件">
+      <created>1663409651939</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663409651939</updated>
+    </task>
+    <task id="LOCAL-00003" summary="网关搭建和个人信息服务搭建完成，集成seata、nacos、sentinel、mysql中间件">
+      <created>1663409806313</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663409806313</updated>
+    </task>
+    <task id="LOCAL-00004" summary="初步完成微服务逻辑流程，接入springboot-admin进行服务监测">
+      <created>1663497459431</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663497459431</updated>
+    </task>
+    <task id="LOCAL-00005" summary="初步完成微服务逻辑流程，接入springboot-admin进行服务监测">
+      <created>1663548677817</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663548677818</updated>
+    </task>
+    <task id="LOCAL-00006" summary="接入redis缓存信息，加入jetcache缓存框架，修改微服务逻辑bug">
+      <created>1663606227273</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663606227273</updated>
+    </task>
+    <task id="LOCAL-00007" summary="完成基本业务逻辑curd">
+      <created>1663849287398</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663849287398</updated>
+    </task>
+    <task id="LOCAL-00008" summary="完成配置优化，将公共配置代码simple.yaml上传至配置中心">
+      <created>1663850599746</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663850599746</updated>
+    </task>
+    <task id="LOCAL-00009" summary="更新数据库文件">
+      <created>1663863099543</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663863099543</updated>
+    </task>
+    <task id="LOCAL-00010" summary="增加SYNC-server Themis包文件，实现注册、心跳、选举功能">
+      <created>1665665154662</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665665154662</updated>
+    </task>
+    <task id="LOCAL-00011" summary="完成Sync-data框架，测试阶段，需解决List&lt;ServerModel&gt;无法全局生效问题">
+      <created>1665912906597</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665912906597</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/GATEWAY" />
+      <path value="$PROJECT_DIR$/Identity-server" />
+      <path value="$PROJECT_DIR$/Nucleic-acid-server" />
+      <path value="$PROJECT_DIR$/Trace-server" />
+      <path value="$PROJECT_DIR$/Vaccines-server" />
+    </ignored-roots>
+    <MESSAGE value="网关搭建和个人信息服务搭建完成，集成seata、nacos、sentinel、mysql中间件" />
+    <MESSAGE value="初步完成微服务逻辑流程，接入springboot-admin进行服务监测" />
+    <MESSAGE value="接入redis缓存信息，加入jetcache缓存框架，修改微服务逻辑bug" />
+    <MESSAGE value="完成基本业务逻辑curd" />
+    <MESSAGE value="完成配置优化，将公共配置代码simple.yaml上传至配置中心" />
+    <MESSAGE value="更新数据库文件" />
+    <MESSAGE value="增加SYNC-server Themis包文件，实现注册、心跳、选举功能" />
+    <MESSAGE value="完成Sync-data框架，测试阶段，需解决List&lt;ServerModel&gt;无法全局生效问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成Sync-data框架，测试阶段，需解决List&lt;ServerModel&gt;无法全局生效问题" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

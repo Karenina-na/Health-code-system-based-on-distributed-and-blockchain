@@ -4,7 +4,6 @@ import com.ybxt.syncserver.client.FollowClient;
 import com.ybxt.syncserver.entity.ServerModel;
 import com.ybxt.syncserver.entity.block_chain.BlockChainModel;
 import com.ybxt.syncserver.entity.block_chain.BlockChainTempQueue;
-import com.ybxt.syncserver.entity.block_chain.BlockModel;
 import com.ybxt.syncserver.entity.message.MessageResult;
 import com.ybxt.syncserver.entity.message.ServerModelList;
 import com.ybxt.syncserver.status.core.StatusEnum;
@@ -18,8 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.List;
-import java.util.Queue;
 
 @RestController
 @RequestMapping("/themis/leader")
@@ -36,7 +33,7 @@ public class LeaderController {
     @Resource
     private BlockChainModel blockChainModel;
     @Resource
-    private ServerModelList serversModelList;
+    private ServerModelList serverModelList;
     @Resource
     private BlockChainTempQueue blockChainTempQueue;
 
@@ -58,7 +55,7 @@ public class LeaderController {
             synchronized (status.getLeader().getAckCount()){
                 status.getLeader().setAckCount(status.getLeader().getAckCount()+1);
                 if (status.getLeader().getAckCount()>=status.getLeader().getServerNum()/2){
-                    new Thread(new LeaderAckFollowSyncThread(this.serverModel,followClient,serversModelList)).start();
+                    new Thread(new LeaderAckFollowSyncThread(this.serverModel,followClient, serverModelList)).start();
                     new Thread(new FollowAckDataSyncThread(blockChainTempQueue,blockChainModel)).start();
                     log.info("leader同意账本同步");
                 }

@@ -34,7 +34,7 @@ public class SyncConfig {
      * udp端口号
      */
     @Value("${themis.server.udo-port}")
-    private Integer UDPPort;
+    private String UDPPort;
 
     /**
      * 集群

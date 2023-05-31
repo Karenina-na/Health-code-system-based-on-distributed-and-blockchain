@@ -24,6 +24,10 @@ public class ServerModel {
      */
     private String port;
     /**
+     * UDP服务端口
+     */
+    private String udp_port;
+    /**
      * 名字
      */
     private String name;
